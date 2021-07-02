@@ -1,13 +1,13 @@
 import './App.css';
 import NavBar from "./components/NavBar/NavBar"
+import ItemListContainer from "./components/ItemList/ItemListContainter"
 
-function App() {
-  const darBienvenida = () => alert("Bienvenido");
+const App = () => {
   return (
     <>
       <div className="App">
-        <NavBar nombreTienda="Espacio Geek" />
-        {/* <h1>Hola mundo</h1>  */}
+        <NavBar />
+        <ItemListContainer greeting="Encuentra tus articulos favoritos!!"/>
       </div>
     </>
   );

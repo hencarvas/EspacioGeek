@@ -1,20 +1,20 @@
 import React from "react";
+import Cart from "./Cart/Cart"
 
-const NavBar = (props) => {
- 
+const NavBar = () => {
     return (
         <nav>
             <h1>EspacioGeek</h1>
             <ul>
-                <li href="#" class="nav-enlace">Comics</li>
-                <li href="#" class="nav-enlace">Funkos</li>
-                <li href="#" class="nav-enlace">Remeras</li>
-                <li href="#" class="nav-enlace">Merchandising</li>
+                <li href="#" className="nav-enlace">Comics</li>
+                <li href="#" className="nav-enlace">Funkos</li>
+                <li href="#" className="nav-enlace">Remeras</li>
+                <li href="#" className="nav-enlace">Merchandising</li>
             </ul>
-            
-            {/* <button onClick={props.darBienvenida}>Saludo</button> */}
+            <div className="div-cart">
+                <Cart/>
+            </div>
         </nav>
-
     );
 };
 
