@@ -1,12 +1,11 @@
-// import React from "react";
-// import Item from "./item/item";
+import React from "react";
+import Item from "./Item/Item";
 
-// const otro = () => {
-//     return (
-//         <div>
-//         {itemsArray.map(articulos => (
-//         <Item articulos={articulos} key={articulos.id}></Item>
-//         ))}
-//     </div>
-//     );
-// }   
+const ItemList = ({displayItems}) => {
+    return (
+        <div className="cards">
+        {displayItems.map(articulo => <Item articulo={articulo} key={articulo.id}> </Item>)}
+        </div>
+    );
+};
+export default ItemList;

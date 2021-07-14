@@ -19,7 +19,6 @@ const Contador = ({ inicial, stock }) => {
   };
 }
 
-  //const Contador = props => {
   return (
     <div className="contador">
       <button className="btn" onClick={min}> - </button>

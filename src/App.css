@@ -50,3 +50,51 @@ h2{
 .btn{
     margin: 20px;
 }
+
+.contenedor{
+    background-color: #ffff;
+}
+
+.article{
+    background-color: #ffff;
+    width: 450px;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0px 0px 10px rgba(12, 64, 141, 0.932);
+    margin: 0.4em;
+}
+
+.section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+    .titulo{
+        color: black;
+        text-align: center;
+        margin-top: 1rem;
+        font-size: 1.7vw;
+    }
+
+    .precio{
+        color: black;
+        text-align: center;
+        font-size: 1.5vw;
+        margin-top: 0;
+        margin-bottom: 2rem;
+    }
+    .img{
+        border: 6px solid white;
+        margin-top: calc(10px - 5px);
+        height: 60vh;
+        width: 40vh;
+        border-bottom: 1px solid rgba(34, 25, 25, 0.74);
+    }
+
+
+.cards{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
