@@ -7,7 +7,6 @@ const Contador = ({ inicial, stock }) => {
     if (count === stock) {
       setCount(count);
     } else {
-
       setCount(count + 1);
     }
   };

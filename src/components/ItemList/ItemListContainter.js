@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Contador from "../Counter/Counter"
+// import Contador from "../Counter/Counter";
 import ItemList from "./ItemList";
 
 
@@ -11,7 +11,7 @@ const ItemListContainer = () => {
             titulo: "Comic Avengers",
             img: "./img/comic_avenger.jpg",
             precio: 1800,
-            stock: 10,
+            stock: 5,
         },
         {
             id: 2,
@@ -25,7 +25,7 @@ const ItemListContainer = () => {
             titulo: "Remera Super Mario",
             img: "./img/remera_mario.jpg",
             precio: 999,
-            stock: 12,  
+            stock: 5,  
         },
         {
             id: 4,
@@ -41,16 +41,16 @@ const ItemListContainer = () => {
         return new Promise((resolve, reject) => {
             setTimeout(() => {
                 resolve(itemsArray)
-            }, 3000)
+            }, 1000)
         })
     }
 
-    getItems() .then((result) => setDisplayItems(result));
+    getItems().then((result) => setDisplayItems(result));
 
 
     return (
         <div className="contenedor">
-            <Contador inicial={1} stock={5}/>
+       
             <ItemList displayItems={displayItems} />
         </div>
     );
