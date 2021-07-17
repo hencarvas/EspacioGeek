@@ -24,7 +24,10 @@ const Contador = ({ inicial, stock }) => {
       <p>{count}</p>
       <button className="btn" onClick={add}> + </button>
     </div>
+
   );
+
+
 };
 
 export default Contador;

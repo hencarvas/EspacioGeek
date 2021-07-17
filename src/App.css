@@ -53,16 +53,23 @@ h2{
 
 .contenedor{
     background-color: #ffff;
+    
 }
 
 .article{
     background-color: #ffff;
-    width: 450px;
+    width: 19em;
+    height: 30em;
     border-radius: 16px;
     overflow: hidden;
     box-shadow: 0px 0px 10px rgba(12, 64, 141, 0.932);
     margin: 0.4em;
 }
+
+/* .body{
+    width: 19em;
+    height: 30em;
+} */
 
 .section{
     display: flex;
@@ -73,30 +80,37 @@ h2{
         color: black;
         text-align: center;
         margin-top: 1rem;
-        font-size: 1.7vw;
+        font-size: 1.5vw;
     }
 
     .precio{
         color: black;
         text-align: center;
-        font-size: 1.5vw;
+        font-size: 1.4vw;
         margin-top: 0;
         margin-bottom: 2rem;
     }
     .img{
         border: 6px solid white;
         margin-top: calc(10px - 5px);
-        height: 60vh;
+        height: 57vh;
         width: 40vh;
         border-bottom: 1px solid rgba(34, 25, 25, 0.74);
     }
 
+    .imagen{
+        border: 6px solid white;
+        margin-top: calc(10px - 5px);
+        height: 57vh;
+        width: 40vh;
+    }
 
 .cards{
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    align-content: space-between;
 }
 
 .count{

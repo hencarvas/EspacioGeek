@@ -1,16 +1,24 @@
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import './App.css';
-import NavBar from "./components/NavBar/NavBar"
-import ItemListContainer from "./components/ItemList/ItemListContainter"
+import NavBar from "./components/NavBar/NavBar";
+import ItemListContainer from "./components/ItemList/ItemListContainter";
+import DetailContainer from './components/ItemDetail/ItemDetailContainer';
 
 
 const App = () => {
   return (
     <>
-      <div className="App">
+      <BrowserRouter>
         <NavBar />
-        <ItemListContainer />
-        
-      </div>
+        <Switch>
+          <Route exact path="/">
+            <ItemListContainer />
+          </Route>
+          <Route exact path="/articulo/:id">
+            <DetailContainer />
+          </Route>
+        </Switch>
+      </BrowserRouter>
     </>
   );
 };
