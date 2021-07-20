@@ -1,15 +1,19 @@
 import React from "react";
-import Cart from "./Cart/Cart"
+import Cart from "./Cart/Cart";
+import {NavLink} from "react-router-dom";
+import {Categorias} from "./../../datos/categorias.json";
 
 const NavBar = () => {
     return (
         <nav>
-            <h1>EspacioGeek</h1>
+            <NavLink to="/" className="titulo-prin" >EspacioGeek</NavLink>
             <ul>
-                <li href="#" className="nav-enlace">Comics</li>
-                <li href="#" className="nav-enlace">Funkos</li>
-                <li href="#" className="nav-enlace">Remeras</li>
-                <li href="#" className="nav-enlace">Merchandising</li>
+                {Categorias.map((cat) => (
+                    <NavLink to={`/categoria/${cat.id}`}
+                        key={cat.id}  className="nav-enlace">
+                        {cat.nombre}
+                    </NavLink>
+                ))}
             </ul>
             <div className="div-cart">
                 <Cart/>

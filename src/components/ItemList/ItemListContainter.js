@@ -1,54 +1,32 @@
-import React, { useState } from "react";
-import {Articulos} from "../../Articulos.json";
+import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import {Articulos} from "../../datos/Articulos.json";
 import ItemList from "./ItemList";
 
 
 const ItemListContainer = () => {
     const [displayItems, setDisplayItems] = useState([]);
-   
-    // const Array = [
-    //         {           
-    //             id: 1,
-    //             titulo: "Comic Avengers",
-    //             img: "./img/comic_avenger.jpg",
-    //             precio: 1800,
-    //             stock: 5
-    //         }
-    //         {
-    //             "id": "2",
-    //             "titulo": "Funko Pop - Freddie Mercury",
-    //             "img": "./img/funko_freddy.jpg",
-    //             "precio": "1900",
-    //             "stock": "6"
-    //         },
-    //         {
-    //             "id": "3",
-    //             "titulo": "Remera Super Mario",
-    //             "img": "./img/remera_mario.jpg",
-    //             "precio": "999",
-    //             "stock": "5"
-    //         },
-    //         {
-    //             "id": "4",
-    //             "titulo": "Juego De 3 Tazas Harry Potter",
-    //             "img": "./img/tazas_harry.jpg",
-    //             "precio": "1100",
-    //             "stock": "5"  
-    //         }
-    //         ]
     
+    const {catId} = useParams();
+
+    useEffect(() => {
+        setDisplayItems([]);
     // Promesa
-    
-    const getItems = () => {
-        return new Promise((resolve, reject) => {
-            setTimeout(() => {
-                resolve(Articulos)
-            }, 2000)
-        })
-    }
+        const getItems = () => {
+            return new Promise((resolve) => {
+                setTimeout(() => {
+                    if (catId) {
+                        let filterList = Articulos.filter((item) => item.categoria === catId);
+                        resolve(filterList);
+                    } else{
+                        resolve(Articulos);
+                    }
+                }, 2000)
+            })
+        };
 
-    getItems().then((result) => setDisplayItems(result));
-
+        getItems().then((result) => setDisplayItems(result));
+    }, [catId]);
 
     return (
         <div className="contenedor">

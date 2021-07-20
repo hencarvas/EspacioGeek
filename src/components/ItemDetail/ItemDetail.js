@@ -9,6 +9,7 @@ const ItemDetail = ({itemToDisplay}) => {
                 <h3 className="titulo">{itemToDisplay.titulo}</h3>
                 <p className="precio">Precio:  {itemToDisplay.precio}</p>
                 <p className="count"> <Contador inicial={0} stock={itemToDisplay.stock}/></p>
+                <button className="btn-comprar">Comprar</button>
             </div>
     );
 };  

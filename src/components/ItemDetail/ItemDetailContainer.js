@@ -1,35 +1,35 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import {Articulos} from "../../Articulos.json";
+import {Articulos} from "../../datos/Articulos.json";
 import ItemDetail from "./ItemDetail";  
-import Contador from "./../Counter/Counter";
 
 
 
 const DetailContainer = () => {
-    const [itemToDisplay, setItemToDisplay] = useState([]);
+    const [itemToDisplay, setItemToDisplay] = useState({});
 
     const {id} = useParams();
+    
+    useEffect(() => {
+        setItemToDisplay({});
 
-    const getItem = () => {
-        return new Promise((resolve) => {
-            setTimeout(() => {
-                resolve(Articulos.find((articulo) => articulo.id === id));
-            }, 3000);
-        });
-    };
-    useEffect( () => {
-        // setItemToDisplay();
+        const getItem = () => {
+            return new Promise((resolve) => {
+                setTimeout(() => {
+                    resolve(Articulos.find((articulo) => articulo.id === id));
+                }, 2000);
+            });
+        };
         getItem().then((result) => setItemToDisplay(result));
     },
     //  eslint-disable-next-line react-hooks/exhaustive-deps 
-    [id],
-    );
+    [id]);
     
     return (
-    <ItemDetail itemToDisplay={itemToDisplay}/>
-    )
-    
+        <div className="contenedor">
+            <ItemDetail itemToDisplay={itemToDisplay}/>
+        </div>    
+    );
 };
 
 export default DetailContainer;

@@ -22,12 +22,13 @@ nav{
     align-items: center;
 }
 
-h1{
+.titulo-prin{
     color: #E7E7DE;
     font-family: 'Righteous', cursive;
     flex: 1 1 auto;
     font-size: 40px;
     margin: -5px;
+    text-decoration: none;
 }
 
 h2{
@@ -53,7 +54,6 @@ h2{
 
 .contenedor{
     background-color: #ffff;
-    
 }
 
 .article{
@@ -64,6 +64,7 @@ h2{
     overflow: hidden;
     box-shadow: 0px 0px 10px rgba(12, 64, 141, 0.932);
     margin: 0.4em;
+    text-decoration: none;
 }
 
 /* .body{
@@ -76,7 +77,11 @@ h2{
     flex-direction: column;
     align-items: center;
 }
-    .titulo{
+.link-card{
+    text-decoration: none;
+    flex: 1 1 20%;
+}
+    .nom-articulo{
         color: black;
         text-align: center;
         margin-top: 1rem;
@@ -107,12 +112,17 @@ h2{
 
 .cards{
     display: flex;
-    flex-direction: row;
+    flex: 2 1 auto;
+    flex-flow: row wrap;
+    /* flex-direction: row;
     justify-content: center;
     align-items: center;
-    align-content: space-between;
+    align-content: space-between; */
 }
 
 .count{
-    margin-top: -20px;
+    margin-top: -50px;
+}
+.btn-comprar{
+    margin-top: -30px;
 }

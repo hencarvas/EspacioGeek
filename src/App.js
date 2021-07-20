@@ -14,7 +14,10 @@ const App = () => {
           <Route exact path="/">
             <ItemListContainer />
           </Route>
-          <Route path="/articulo/:id/">
+          <Route exac path="/categoria/:catId/">
+            <ItemListContainer />
+          </Route>
+          <Route exact path="/articulo/:id/">
             <DetailContainer />
           </Route>
         </Switch>
