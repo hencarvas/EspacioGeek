@@ -11,6 +11,7 @@ const ItemListContainer = () => {
 
     useEffect(() => {
         setDisplayItems([]);
+
     // Promesa
         const getItems = () => {
             return new Promise((resolve) => {

@@ -3,8 +3,6 @@ import { useParams } from "react-router-dom";
 import {Articulos} from "../../datos/Articulos.json";
 import ItemDetail from "./ItemDetail";  
 
-
-
 const DetailContainer = () => {
     const [itemToDisplay, setItemToDisplay] = useState({});
 
@@ -14,15 +12,14 @@ const DetailContainer = () => {
         setItemToDisplay({});
 
         const getItem = () => {
-            return new Promise((resolve) => {
+            return new Promise((resolve, reject) => {
                 setTimeout(() => {
-                    resolve(Articulos.find((articulo) => articulo.id === id));
+                    resolve(Articulos.find(articulo => articulo.id === id));
                 }, 2000);
             });
         };
         getItem().then((result) => setItemToDisplay(result));
     },
-    //  eslint-disable-next-line react-hooks/exhaustive-deps 
     [id]);
     
     return (

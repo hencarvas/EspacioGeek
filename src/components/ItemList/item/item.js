@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 
 const Item = ({articulo}) => {
     return (
-        <>
+        
         <NavLink to={`/articulo/${articulo.id}`} className="link-card">
             <article className="article">
                 <div className="section">
@@ -14,7 +14,7 @@ const Item = ({articulo}) => {
                 </div>
             </article>
         </NavLink>
-        </>
+        
     );
 };
 

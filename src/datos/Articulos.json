@@ -33,6 +33,38 @@
         "precio": 1100,
         "categoria": "4",
         "stock": 5  
+    },
+    {           
+        "id": "4",
+        "titulo": "Comic X-MEN",
+        "img": "../img/xmen.jpg",
+        "precio": 1500,
+        "categoria": "1",
+        "stock": 4
+    },
+    {
+        "id": "5",
+        "titulo": "Funko Pop - Batman",
+        "img": "../img/funko-pop-batman.jpg",
+        "precio": "1900",
+        "categoria": "2",
+        "stock": 3
+    },
+    {
+        "id": "6",
+        "titulo": "Remera Rojo VP",
+        "img": "../img/remera-rojo.jpg",
+        "precio": 999,
+        "categoria": "3",
+        "stock": 5
+    },
+    {
+        "id": "7",
+        "titulo": "Cafetera R2D2",
+        "img": "../img/cafetera.jpg",
+        "precio": 3000,
+        "categoria": "4",
+        "stock": 5  
     }
     ]
 }
