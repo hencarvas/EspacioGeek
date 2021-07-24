@@ -12,10 +12,10 @@ const DetailContainer = () => {
         setItemToDisplay({});
 
         const getItem = () => {
-            return new Promise((resolve, reject) => {
+            return new Promise((resolve) => {
                 setTimeout(() => {
                     resolve(Articulos.find(articulo => articulo.id === id));
-                }, 2000);
+                }, 1000);
             });
         };
         getItem().then((result) => setItemToDisplay(result));
@@ -23,7 +23,7 @@ const DetailContainer = () => {
     [id]);
     
     return (
-        <div className="contenedor">
+        <div className="">
             <ItemDetail itemToDisplay={itemToDisplay}/>
         </div>    
     );

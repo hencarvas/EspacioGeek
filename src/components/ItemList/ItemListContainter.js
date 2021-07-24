@@ -22,7 +22,7 @@ const ItemListContainer = () => {
                     } else{
                         resolve(Articulos);
                     }
-                }, 2000)
+                }, 1000)
             })
         };
 
