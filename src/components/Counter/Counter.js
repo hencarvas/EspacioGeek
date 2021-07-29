@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 
-const Contador = ({ inicial, stock }) => {
-  const [count, setCount] = useState(1);
+const Contador = ({ inicial, stock, count, setCount}) => {
+  
   const add = () => {
     if (count === stock) {
       setCount(count);
@@ -24,10 +24,7 @@ const Contador = ({ inicial, stock }) => {
       <p>{count}</p>
       <button className="btn" onClick={add}> + </button>
     </div>
-
   );
-
-
 };
 
 export default Contador;

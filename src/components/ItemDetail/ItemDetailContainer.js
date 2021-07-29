@@ -8,6 +8,8 @@ const DetailContainer = () => {
 
     const {id} = useParams();
     
+
+
     useEffect(() => {
         setItemToDisplay({});
 
@@ -23,9 +25,9 @@ const DetailContainer = () => {
     [id]);
     
     return (
-        <div className="">
+      
             <ItemDetail itemToDisplay={itemToDisplay}/>
-        </div>    
+        
     );
 };
 

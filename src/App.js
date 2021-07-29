@@ -1,16 +1,19 @@
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
-import './App.css';
-import NavBar from "./components/NavBar/NavBar";
+import CartProvider from './components/Context/CartContext';
 import ItemListContainer from "./components/ItemList/ItemListContainter";
 import DetailContainer from './components/ItemDetail/ItemDetailContainer';
+import NavBar from "./components/NavBar/NavBar";
+import './App.css';
 
 
 const App = () => {
   return (
-    <>
+    
+    <CartProvider >
       <BrowserRouter>
         <NavBar />
         <Switch>
+        <div className="container">
           <Route exact path="/">
             <ItemListContainer />
           </Route>
@@ -20,9 +23,10 @@ const App = () => {
           <Route exact path="/articulo/:id/">
             <DetailContainer />
           </Route>
+          </div>
         </Switch>
       </BrowserRouter>
-    </>
+    </CartProvider>
   );
 };
 

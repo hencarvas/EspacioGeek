@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { CartContext } from '../Context/CartContext';
 import Contador from './../Counter/Counter';
 
 
@@ -9,33 +10,43 @@ const ItemDetail = ({itemToDisplay}) => {
 
     const [finished, setFinished] = useState(false);
 
-    const handleState = ( ) => setFinished(!finished); 
+    const handleState = () => setFinished(!finished); 
+
+    const {addToCart, cart, removeToCart, deleteCart} = useContext(CartContext);
+  
+    const handleAdd = () => {
+        addToCart({ ...itemToDisplay, count});
+    }
+
+    
 
     return (
-            <article className="article-detail">
-                <div className="div-img">
-                    <img className="img-detail" src={"/" + itemToDisplay.img} alt={itemToDisplay.titulo}/>
-                </div>
-                <div className="div-detail">
-                    <h3 className="titulo-detail">{itemToDisplay.titulo}</h3>
-                    <span className="precio-detail">$ {itemToDisplay.precio}</span>
-                    {!finished ? (
-                        <>
-                        <Contador inicial={1} count={count} setCount={setCount} stock={itemToDisplay.stock}/>
-                        <button className="btn-comprar" onClick={handleState}>Comprar</button>
-                        </>
-                    ):(
-                        <div className="div-btn">
-                            <Link to="/cart" onClick={handleState}>
-                                <button className="boton1" onClick={handleState}>Terminar Compra</button>
-                            </Link>
-                                <button className="boton2" onClick={handleState}>Modificar</button>
-                        </div>
-                    )}
-                </div>
-            </article>
-    );
-};  
+        <article className="article-detail">
+            <div className="div-img">
+                <img className="img-detail" src={"/" + itemToDisplay.img} alt={itemToDisplay.titulo}/>
+            </div>
+            <div className="div-detail">
+                <h3 className="titulo-detail">{itemToDisplay.titulo}</h3>
+                <span className="precio-detail">$ {itemToDisplay.precio}</span>
+                {!finished ? (
+                    <>
+                    <Contador inicial={1} count={count} setCount={setCount} stock={itemToDisplay.stock}/>
 
+                    <button className="btn-comprar" onClick={() => {handleState(); handleAdd()}}>Agregar al Carrito </button>
+                    <button className="btn-comprar" onClick={() => {deleteCart()}}>Vaciar Carrito </button>
+                    </>
+                ):(
+                    <div className="div-btn">
+                        <Link to="/cart" onClick={handleState}>
+                            <button className="boton1" onClick={handleState}>Terminar Compra</button>
+                        </Link>
+                            <button className="boton2" onClick={() => {handleState(); removeToCart(itemToDisplay.id)}}>Modificar</button>
+                    </div>
+                )}
+            </div>
+        </article>
+    );
+
+};  
 
 export default ItemDetail;
