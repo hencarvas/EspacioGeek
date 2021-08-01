@@ -12,14 +12,15 @@ const ItemDetail = ({itemToDisplay}) => {
 
     const handleState = () => setFinished(!finished); 
 
-    const {addToCart, cart, removeToCart, deleteCart} = useContext(CartContext);
+    const {addToCart, cart, removeToCart} = useContext(CartContext);
   
     const handleAdd = () => {
         addToCart({ ...itemToDisplay, count});
     }
 
-    
+    // console.log(cart)
 
+    
     return (
         <article className="article-detail">
             <div className="div-img">
@@ -33,7 +34,6 @@ const ItemDetail = ({itemToDisplay}) => {
                     <Contador inicial={1} count={count} setCount={setCount} stock={itemToDisplay.stock}/>
 
                     <button className="btn-comprar" onClick={() => {handleState(); handleAdd()}}>Agregar al Carrito </button>
-                    <button className="btn-comprar" onClick={() => {deleteCart()}}>Vaciar Carrito </button>
                     </>
                 ):(
                     <div className="div-btn">

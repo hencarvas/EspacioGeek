@@ -13,9 +13,13 @@ const DataProvider = ({children}) => {
         if (isInCart(newItem) ) {
             setCart([...cart, newItem]);
         } else {
-            alert("El articulo ye está en el carrito")
+            alert("El articulo ya está en el carrito")
         };
     };
+
+    const quantityItmes = () => {
+        return cart.reduce( (item, items) => item + items.count, 0)
+    }
 
     const removeToCart = (id) => {
         setCart(cart.filter(item => item.id !== id))
@@ -24,7 +28,7 @@ const DataProvider = ({children}) => {
     const deleteCart = () => setCart([]);
 
     return(
-        <CartContext.Provider value={{cart, addToCart, removeToCart, deleteCart}}>
+        <CartContext.Provider value={{cart, addToCart, removeToCart, deleteCart, quantityItmes}}>
                  {children}
     </CartContext.Provider>
     );

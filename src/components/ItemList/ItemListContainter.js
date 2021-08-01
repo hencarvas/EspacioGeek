@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import {Articulos} from "../../datos/Articulos.json";
 import ItemList from "./ItemList";
+import Loader from "./../Loader/Loader"
 
 
 const ItemListContainer = () => {
@@ -30,9 +31,17 @@ const ItemListContainer = () => {
     }, [catId]);
 
     return (
-        <div className="contenedor">
-            <ItemList displayItems={displayItems} />
-        </div>
+        <>
+        {
+            displayItems.length ? (
+            <div className="contenedor">
+                <ItemList displayItems={displayItems} />
+            </div>
+            ) : (
+                <Loader/> 
+            )
+        }
+        </>
     );
      
 };
