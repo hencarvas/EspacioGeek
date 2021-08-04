@@ -2,7 +2,7 @@
     display: flex;
     justify-content: center;
     background-color: #ffff;
-    margin-top: 40px;
+    margin-top: 130px;
     width: 90%;
     height: 82vh;
     padding-top: -60px;
@@ -28,10 +28,6 @@
         width: 55vh;
         padding: 10px;
         margin: 20px;
-
-        // padding-right: 10px;
-        // padding-bottom: 10px;
-
     }
         .titulo-detail{
             color: black;
@@ -52,14 +48,14 @@
 
         .btn-comprar{
             // margin-top: 15px;
-            background: springgreen;
+            background: #16C79A;
             display: block;
             width: 100%;
             padding: 20px;
             color: #fff;
             text-decoration: none;
             border-radius: 16px;
-            border-color: springgreen;
+            border-color: #16C79A;
             font-weight: bold;
             font-size: 2.5vh;
         }
@@ -68,23 +64,23 @@
     display: flex;
 }
     .boton1{
-        background: springgreen;
+        background: #16C79A;
         padding: 20px;
         color: #fff;
         text-decoration: none;
         border-radius: 16px;
-        border-color: springgreen;
+        border-color: #16C79A;
         font-weight: bold;
         width: 28vh;
         font-size: 2.5vh;
     }
     .boton2{
-        background: springgreen;
+        background: #16C79A;
         padding: 10px;
         color: #fff;
         text-decoration: none;
         border-radius: 16px;
-        border-color: springgreen;
+        border-color: #16C79A;
         font-weight: bold;
         width: 27vh;
         font-size: 2.5vh;

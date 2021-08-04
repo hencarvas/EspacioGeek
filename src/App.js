@@ -2,7 +2,7 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import CartProvider from './components/Context/CartContext';
 import ItemListContainer from "./components/ItemList/ItemListContainter";
 import DetailContainer from './components/ItemDetail/ItemDetailContainer';
-import DetailCart from './components/Cart/setCart'
+import CartWidget from './components/Cart/Cart'
 import NavBar from './components/NavBar/NavBar';
 // import ItemCart from './components/Cart/Cart';
 
@@ -19,7 +19,7 @@ const App = () => {
             <ItemListContainer />
           </Route>
           <Route exact path="/cart/">
-            <DetailCart />
+            <CartWidget />
           </Route>
           <Route exac path="/categoria/:catId/">
             <ItemListContainer />

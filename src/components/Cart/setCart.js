@@ -2,18 +2,19 @@
 // import { useParams } from "react-router-dom";
 // import {Articulos} from "../../datos/Articulos.json";
 // import { CartContext } from '../Context/CartContext';
-import React from "react";
+// import React from "react";
 
-import CartWidget from "./Cart"
+// import CartWidget from "./Cart"
 
-const Cart = () => {
+// const Cart = () => {
 
-    return (
-        <nav className="div-items">
+//     return (
+//         <nav className="div-items">
             
-            <CartWidget/>
-        </nav>
-    )
+//             <CartWidget />
+            
+//         </nav>
+//     )
 
 
     // const [cartToDisplay, setCartToDisplay] = useState({});
@@ -50,7 +51,7 @@ const Cart = () => {
     //     </article>
         
     //     );
-    };
+    // };
     
-    export default Cart;
+    // export default Cart;
     

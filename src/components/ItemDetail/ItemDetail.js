@@ -12,7 +12,7 @@ const ItemDetail = ({itemToDisplay}) => {
 
     const handleState = () => setFinished(!finished); 
 
-    const {addToCart, cart, removeToCart} = useContext(CartContext);
+    const {addToCart,  removeToCart} = useContext(CartContext);
   
     const handleAdd = () => {
         addToCart({ ...itemToDisplay, count});
@@ -29,6 +29,8 @@ const ItemDetail = ({itemToDisplay}) => {
             <div className="div-detail">
                 <h3 className="titulo-detail">{itemToDisplay.titulo}</h3>
                 <span className="precio-detail">$ {itemToDisplay.precio}</span>
+                <span className="titulo-detail">Stock: {itemToDisplay.stock}</span>
+
                 {!finished ? (
                     <>
                     <Contador inicial={1} count={count} setCount={setCount} stock={itemToDisplay.stock}/>

@@ -8,7 +8,6 @@ import { CartContext } from '../Context/CartContext';
 const NavBar = () => {
     
     const {quantityItmes} = useContext(CartContext);
-     
     
     return (
         <nav>
@@ -23,7 +22,7 @@ const NavBar = () => {
                 ))}
             </ul>
             <div className="div-cart">
-                <NavLink to="/cart"> <i className="fas fa-shopping-cart"> <span className="cant-items">{quantityItmes()}</span></i></NavLink>
+                <NavLink to="/cart"> <i className="fas fa-shopping-cart item-cart"> <span className="cant-items">{quantityItmes()}</span></i></NavLink>
             </div>
         </nav>
     );

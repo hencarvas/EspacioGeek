@@ -25,10 +25,17 @@ const DataProvider = ({children}) => {
         setCart(cart.filter(item => item.id !== id))
     }
 
+    const totalCart = () => {
+        return cart.reduce( (item, items) => item + (items.precio * items.count), 0)
+    }
+
+    
+
+
     const deleteCart = () => setCart([]);
 
     return(
-        <CartContext.Provider value={{cart, addToCart, removeToCart, deleteCart, quantityItmes}}>
+        <CartContext.Provider value={{cart, addToCart, removeToCart, deleteCart, quantityItmes, totalCart}}>
                  {children}
     </CartContext.Provider>
     );

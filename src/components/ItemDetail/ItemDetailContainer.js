@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import {Articulos} from "../../datos/Articulos.json";
-import Loader from "./../Loader/Loader"
+// import Loader from "./../Loader/Loader"
 import ItemDetail from "./ItemDetail";  
 
 const DetailContainer = () => {
@@ -24,16 +24,16 @@ const DetailContainer = () => {
     [id]);
     
     return (
-        <> { itemToDisplay ?  ( 
+        // <> { itemToDisplay ?  ( 
             <ItemDetail itemToDisplay={itemToDisplay} />
-            ) : (
-                <>
-                <Loader />    
-            </>
+            // ) : (
+                // <>
+                // <Loader />    
+            // </>
         )
-    }
-    </>
-    )
+    // }
+    // </>
+    // )
 };
 
 export default DetailContainer;
