@@ -12,3 +12,4 @@ const ItemList = ({displayItems}) => {
     );
 };      
 export default ItemList;
+ 
