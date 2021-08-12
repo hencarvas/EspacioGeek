@@ -1,57 +1,26 @@
-// import React, { useContext, useState, useEffect } from "react";
-// import { useParams } from "react-router-dom";
-// import {Articulos} from "../../datos/Articulos.json";
-// import { CartContext } from '../Context/CartContext';
-// import React from "react";
+import React,  { useContext } from "react";
+import { CartContext } from '../Context/CartContext';
+import { NavLink } from "react-router-dom";
 
-// import CartWidget from "./Cart"
+const CartItem = ({item}) => {
 
-// const Cart = () => {
-
-//     return (
-//         <nav className="div-items">
+    const {removeToCart, modifyArticle} = useContext(CartContext);     
+       
+    return (
+        <div className="cart-items">          
+            <img src={item.img} alt={item.titulo} className="img-item"/>
+            <NavLink to={`/articulo/${item.id}`} onClick={() => {modifyArticle(item.id)}}className="link-card">
+            <h3 className="titulo-item">{item.titulo}</h3>
+            </NavLink>
+            <h3 className="cant-item"> Cantidad: {item.count}</h3>
+            <h3 className="precio-item">Precio C/U ${item.precio}</h3>
+            <h3 className="total-item"> Total: ${item.precio * item.count}</h3>
             
-//             <CartWidget />
-            
-//         </nav>
-//     )
-
-
-    // const [cartToDisplay, setCartToDisplay] = useState({});
-
-    // const {cart} = useContext(CartContext);
-    // console.log(cart)
-
-    // const {id} = useParams();
-    
-    // useEffect(() => {
-    //     setCartToDisplay({});
-
-    //     const getItem = () => {
-    //         return new Promise((resolve) => {
-    //             setTimeout(() => {
-    //                 resolve(cart.find(cart => cart.id === id));
-    //             }, 1000);
-    //         });
-    //     };
-    //     getItem().then((result) => setCartToDisplay(result));
-    // },
-    // [id]);
-    
-    // return (
-      
-
-    //     <article className="article-detail">
-    //         <div className="div-img">
-    //             <img className="img-detail" src={"/" + cartToDisplay.img}/>
-    //             <h3 className="titulo-detail">{cart.titulo}</h3>
-    //             <>{cart}</>
-    //         </div>
-            
-    //     </article>
-        
-    //     );
-    // };
-    
-    // export default Cart;
-    
+            <div className="btn-item">
+                <button className="btn-item" onClick={() => {removeToCart(item.id)}}><i className="fas fa-trash "  ></i>
+                </button> 
+            </div> 
+        </div> )
+};      
+export default CartItem;
+  

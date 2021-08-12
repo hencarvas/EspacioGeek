@@ -1,14 +1,14 @@
 import React, { useContext } from 'react';
 import { CartContext } from '../Context/CartContext';
+import CartItem from "./setCart";
 import { NavLink } from "react-router-dom";
 
 
 const CartWidget = () => {
 
-    const {cart, deleteCart, totalCart, removeToCart} = useContext(CartContext);
+    const {cart, deleteCart, totalCart} = useContext(CartContext);
   
-    // console.log(cart)
-
+    console.log(cart)
 
     return (
     <div  className="div-content"> 
@@ -27,31 +27,19 @@ const CartWidget = () => {
                 </div>
             ) : (
                 <div>
-                {cart.map((item) => (
-                    <div className="cart-items">          
-                        <img src={"/" + item.img} alt={item.titulo} className="img-item"/>
-                        <NavLink to={`/articulo/${item.id}`} onClick={() => {removeToCart(item.id)}}className="link-card">
-                        <h3 className="titulo-item">{item.titulo}</h3>
-                        </NavLink>
-                        <h3 className="cant-item"> Cantidad: {item.count}</h3>
-                        <h3 className="precio-item">Precio C/U ${item.precio}</h3>
-                        <h3 className="total-item"> Total: ${item.precio * item.count}</h3>
-                    
-                        <div className="btn-item">
-                            <button className="btn-item" onClick={() => {removeToCart(item.id)}}><i className="fas fa-trash "  ></i>
-                                </button> 
-                            </div> 
-                    </div> ))
-                }
+                    {cart.map((item) => (
+                     <CartItem item={item} key={item.id}/>
+                     ))
+                    }   
+                    <div className="div-total">
+                        <h3 className="total-cart">Total: ${totalCart()}</h3>
+                        <button className="btn-compra">Finalizar Compra</button>
+                    </div>
                 </div>
                 )
+
             }        
         </div>
-            <div className="div-total">
-                <h3 className="total-cart">Total: ${totalCart()}</h3>
-                 <button className="btn-compra">Finalizar Compra</button>
-
-            </div>
     </div>
     </div>
     )
@@ -59,3 +47,21 @@ const CartWidget = () => {
     };  
 
 export default CartWidget;
+
+
+/* <div className="cart-items">          
+                        <img src={item.img} alt={item.titulo} className="img-item"/>
+                        <NavLink to={`/articulo/${item.id}`} onClick={() => {modifyArticle(item.id)}}className="link-card">
+                        <h3 className="titulo-item">{item.titulo}</h3>
+                        </NavLink>
+                        <h3 className="cant-item"> Cantidad: {item.count}</h3>
+                        <h3 className="cant-item"> id: {item.id}</h3>
+
+                        <h3 className="precio-item">Precio C/U ${item.precio}</h3>
+                        <h3 className="total-item"> Total: ${item.precio * item.count}</h3>
+                    
+                        <div className="btn-item">
+                            <button className="btn-item" onClick={() => {removeToCart(item.id)}}><i className="fas fa-trash "  ></i>
+                                </button> 
+                            </div> 
+                    </div> )) */

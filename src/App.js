@@ -4,7 +4,6 @@ import ItemListContainer from "./components/ItemList/ItemListContainter";
 import DetailContainer from './components/ItemDetail/ItemDetailContainer';
 import CartWidget from './components/Cart/Cart'
 import NavBar from './components/NavBar/NavBar';
-// import ItemCart from './components/Cart/Cart';
 
 
 const App = () => {

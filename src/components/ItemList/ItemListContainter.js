@@ -1,38 +1,76 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-// import {Articulos} from "../../datos/Articulos.json";
 import ItemList from "./ItemList";
 // import Loader from "./../Loader/Loader";
 import {database} from "./../../firebase/firebase";
 
-const ItemListContainer = () => {
+const ItemListContainer = () => {   
     const [displayItems, setDisplayItems] = useState([]);
     
     const {catId} = useParams();
 
-
     useEffect(() => {
-        setDisplayItems([]);
-
+        setDisplayItems([]);        
         
         const getItems = () => {
-            const articulo = database.collection("articulos")
-           
-            // if(catId) {
-            //     database.collection("articulos").where("categoria", "==", categoria)
-            // } else {
-            //     database.collection("articulos")
-            // }
+            if( catId ) { 
+                    const categoria = database.collection("articulos").where("categoria", "==", catId)
+                    categoria.get().then((query) => setDisplayItems(query.docs.map((doc) => {
+                    return {...doc.data(), id: doc.id}
+                 })
+                 ))
+                } else {   
+                    const articulo = database.collection("articulos")
+                    articulo.get().then((result) => setDisplayItems(result.docs.map((docu) => {
+                    return { ...docu.data(), id: docu.id};
+                    })  
+                    ));         
+                }
+            };
             
-            
-            // database.collection("articulos").where("categoria", "==", categoria);
-            
+        getItems(catId);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [catId]);
 
-            articulo.get().then((result) => setDisplayItems(result.docs.map((doc) => {
-                return { ...doc.data(), id: doc.id};
-                })
-            )
-            );
+    return (
+        <div className="contenedor">
+            <ItemList displayItems={displayItems} />
+        </div>
+        // <>
+        // {
+        //     displayItems.length ? (
+
+        //     ) : (
+        //         <Loader/> 
+        //     )
+        // }
+        // </>
+    );
+     
+};
+
+export default ItemListContainer;
+
+    ///////////////////
+    // articulo.get().then((result) => setDisplayItems(result.docs.map((doc) => {
+    //     return { ...doc.data(), id: doc.id};
+    // })
+    // )
+    // );
+
+//////////////////////////7
+        // const getItems = () => {
+        //     const articulo = database.collection("articulos")
+           
+        //     articulo.get().then((result) => setDisplayItems(result.docs.map((doc) => {
+        //         return { ...doc.data(), id: doc.id};
+        //         })
+        //     )
+        //     );
+        // }
+
+////////////////////////////////
+
             
             // return new Promise((resolve) => {
             //     setTimeout(() => {
@@ -45,31 +83,4 @@ const ItemListContainer = () => {
             //     }, 1000)
             // })
       
-            
-
-           
-
-            // console.log(articulo)
-        };
-
-        
-        getItems();
-    }, [catId]);
-
-    return (
-            <div className="contenedor">
-                <ItemList displayItems={displayItems} />
-            </div>
-        // <>
-        // {
-        //     displayItems.length ? (
-        //     ) : (
-        //         <Loader/> 
-        //     )
-        // }
-        // </>
-    );
-     
-};
-
-export default ItemListContainer;
+              // console.log(articulo)
