@@ -11,12 +11,12 @@ const ItemDetail = ({itemToDisplay, id}) => {
 
     const handleState = () => setFinished(!finished); 
 
-    const {addToCart, modifyArticle, totalItem} = useContext(CartContext);
+    const {addToCart, modifyArticle} = useContext(CartContext);
 
-    const totalIt = totalItem.item;
+    // const totalIt = totalItem.item;
 
     const handleAdd = () => {
-        addToCart({ ...itemToDisplay, count, id, totalIt});
+        addToCart({ ...itemToDisplay, count, id});
     }
     
     // console.log(cart)
@@ -37,8 +37,8 @@ const ItemDetail = ({itemToDisplay, id}) => {
                     </>
                 ):(
                     <>
-                    {/* itemToDisplay.precio * count */}
-                        <span className="precio-detail">Total ${totalItem()}</span>
+                    
+                        <span className="precio-detail">Total ${ itemToDisplay.precio * count}</span>
                         <span className="titulo-detail">Stock: {itemToDisplay.stock}</span>
                        
                     <div className="div-btn">

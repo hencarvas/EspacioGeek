@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 // import Loader from "./../Loader/Loader"
 import ItemDetail from "./ItemDetail";  
-import {database} from "./../../firebase/firebase";
+import {database} from "../../Firebase/Firebase";
 
 
 const DetailContainer = () => {
@@ -39,14 +39,3 @@ const DetailContainer = () => {
 };
 
 export default DetailContainer;
-
-
-            // return new Promise((resolve) => {
-            //     setTimeout(() => {
-            //         resolve(articulo.find(articulo => articulo.id === id));
-            //     }, 1000);
-            // });
-            // (articulo.docs.find((doc) => articulo.docs.id === (id) 
-            // { return { ...doc.data(), id: doc.id}  })
-            
-            // ({ ...articulo.docs[0].data(), id: articulo.docs[0].id})
