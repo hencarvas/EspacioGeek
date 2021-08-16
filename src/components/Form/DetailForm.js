@@ -5,6 +5,8 @@ import React, {useState} from 'react';
 
 const DetailForm = ({addCart}) => {
 
+    // const { deleteCart} = useContext(CartContext);     
+
 
     const [inputs, setInputs] = useState();
 
@@ -15,11 +17,10 @@ const DetailForm = ({addCart}) => {
     
     const handleSubmit = (e) => {
         e.preventDefault();
-       addCart(inputs);
-
-    
-
+        addCart(inputs);
+        e.target.reset();
     }
+
     return (
         <form onSubmit={handleSubmit}>
             <div className="div-form" >
@@ -27,7 +28,7 @@ const DetailForm = ({addCart}) => {
                 <input tipe="text" placeholder="Apellido" name="apellido" onChange={handleInput}/>
                 <input tipe="text" placeholder="Telefono" name="telefono" onChange={handleInput}/>
                 <input tipe="text" placeholder="Email" name="email" onChange={handleInput}/>
-                <button className="btn-compra" >Finalizar Compra</button>
+                <button className="btn-compra">Finalizar Compra</button>
             </div>
         </form>
     )

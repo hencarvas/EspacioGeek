@@ -6,7 +6,7 @@ import { CartContext } from '../Context/CartContext';
 
 const Form = (cart) => {
 
-    const { totalCart} = useContext(CartContext);     
+    const { totalCart, deleteCart} = useContext(CartContext);     
 
     const addCart =  (inputs) => {
             const handleOrder = {
@@ -16,17 +16,14 @@ const Form = (cart) => {
                 total: totalCart(),
             }
             
-            // alert("agregado correctamente");
-            // deleteCart();
             const orders = database.collection('ordenes');
             
             console.log(handleOrder)
-            orders.add(handleOrder).then((response) => alert("agregado")).catch((error) => {alert('error', error)});
-            
+            orders.add(handleOrder).then((response) => alert("agregado"), deleteCart()).catch((error) => {alert('error', error)});
             // console.log('agregado')
-        }
 
-       
+            
+        }
 
     return(
         <>

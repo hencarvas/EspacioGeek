@@ -24,7 +24,7 @@ const ItemDetail = ({itemToDisplay, id}) => {
     return (
         <article className="article-detail">
             <div className="div-img">
-                <img className="img-detail" src={ itemToDisplay.img} alt={itemToDisplay.titulo}/>
+                <img className="img-detail" src={itemToDisplay.img} alt={itemToDisplay.titulo}/>
             </div>
             <div className="div-detail">
                 <h3 className="titulo-detail">{itemToDisplay.titulo}</h3>
@@ -37,18 +37,15 @@ const ItemDetail = ({itemToDisplay, id}) => {
                     </>
                 ):(
                     <>
-                    
                         <span className="precio-detail">Total ${ itemToDisplay.precio * count}</span>
-                        <span className="titulo-detail">Stock: {itemToDisplay.stock}</span>
-                       
+                        {/* <span className="titulo-detail">Stock: {itemToDisplay.stock}</span> */}
                     <div className="div-btn">
-
                         <Link to="/cart" onClick={handleState}>
-                            <button className="boton1" onClick={() => {handleState()}}>Terminar Compra</button>
+                            <button className="boton1" onClick={() => {handleState()}}>Continuar al carrito</button>
                         </Link>
                             <button className="boton2" onClick={() => {handleState(); modifyArticle(id)}}>Modificar</button>
                     </div>
-                        </>
+                    </>
                 )}
             </div>
         </article>

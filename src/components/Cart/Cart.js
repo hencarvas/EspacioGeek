@@ -37,7 +37,7 @@ const CartWidget = () => {
                     <div className="otro-div">
                         <h2>Datos de Cliente</h2>
                         
-                        <Form cart={cart} totalCart={totalCart} />           
+                        <Form cart={cart} />           
                     </div>
                 </div>
                 )

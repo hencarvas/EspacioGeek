@@ -1,5 +1,24 @@
 .div-form{
     display: flex;
     flex-direction: column;
-    margin: 6px
+    margin: 6px;
+    padding: 20px;
 }
+
+    .btn-compra{
+        background: #16C79A;
+        padding: 5px;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 16px;
+        border-color: #16C79A;
+        font-weight: bold;
+        width: 25vh;
+        font-size: 3vh;
+        height: 60px;
+        margin-top: 20px;
+    }
+
+    input{
+        margin: 10px
+    }
