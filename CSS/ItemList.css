@@ -1,6 +1,0 @@
-.cards {
-  display: flex;
-  flex: 2 1 auto;
-  flex-flow: row wrap;
-  background-color: #FFFFFF;
-}

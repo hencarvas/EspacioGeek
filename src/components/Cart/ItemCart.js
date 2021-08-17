@@ -9,7 +9,6 @@ const CartItem = ({item}) => {
     return (
         <div className="cart-items">          
             <img src={item.img} alt={item.titulo} className="img-item"/>
-           
             <div className="detalle-items">
                 <NavLink to={`/articulo/${item.id}`} onClick={() => {modifyArticle(item.id)}} className="titulo-item">
                     <h3 >{item.titulo}</h3>
@@ -24,8 +23,8 @@ const CartItem = ({item}) => {
                     </button> 
                 </div> 
             </div>
-            
-        </div> )
+        </div>
+        );
 };      
 export default CartItem;
   

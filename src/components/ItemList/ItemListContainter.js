@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import ItemList from "./ItemList";
-// import Loader from "./../Loader/Loader";
+import Loader from "./../Loader/Loader";
 import {database} from "../../Firebase/Firebase";
 
 const ItemListContainer = () => {   
@@ -33,18 +33,17 @@ const ItemListContainer = () => {
     }, [catId]);
 
     return (
+        <>
+        {
+        displayItems.length ? (
         <div className="contenedor">
             <ItemList displayItems={displayItems} />
         </div>
-        // <>
-        // {
-        //     displayItems.length ? (
-
-        //     ) : (
-        //         <Loader/> 
-        //     )
-        // }
-        // </>
+            ) : (
+                <Loader/> 
+            )
+        }
+        </>
     );
      
 };

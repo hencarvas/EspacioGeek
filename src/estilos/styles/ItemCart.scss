@@ -4,9 +4,9 @@
     justify-content: space-around;
     align-items: center;
     height: 200px;
-    // width: 680px;
-    margin: 6px;
+    width: 710px;
     background-color: #FFFFFF;
+    border-top: 1px solid rgba(36, 35, 35, 0.486);
 }
 
 .img-item{
@@ -51,6 +51,7 @@
         width: 150px;
         text-align: center;
         font-weight: lighter;
+        border-right: 1px solid rgba(36, 35, 35, 0.486);
     }
 
     .div-item-elim{

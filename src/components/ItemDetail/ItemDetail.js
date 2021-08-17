@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { CartContext } from '../Context/CartContext';
 import Contador from './../Counter/Counter';
 
-const ItemDetail = ({itemToDisplay, id}) => {
+const ItemDetail = ({img, titulo, precio, stock, id}) => {
    
     const [count, setCount] = useState(1);
 
@@ -13,10 +13,8 @@ const ItemDetail = ({itemToDisplay, id}) => {
 
     const {addToCart, modifyArticle} = useContext(CartContext);
 
-    // const totalIt = totalItem.item;
-
     const handleAdd = () => {
-        addToCart({ ...itemToDisplay, count, id});
+        addToCart({ img, titulo, precio,  count, id});
     }
     
     // console.log(cart)
@@ -24,21 +22,21 @@ const ItemDetail = ({itemToDisplay, id}) => {
     return (
         <article className="article-detail">
             <div className="div-img">
-                <img className="img-detail" src={itemToDisplay.img} alt={itemToDisplay.titulo}/>
+                <img className="img-detail" src={img} alt={titulo}/>
             </div>
             <div className="div-detail">
-                <h3 className="titulo-detail">{itemToDisplay.titulo}</h3>
+                <h3 className="titulo-detail">{titulo}</h3>
                 {!finished ? (
                     <>
-                    <span className="precio-detail">$ {itemToDisplay.precio}</span>
-                    <span className="titulo-detail">Stock: {itemToDisplay.stock}</span>
-                    <Contador inicial={1} count={count} setCount={setCount} stock={itemToDisplay.stock}/>
+                    <span className="precio-detail">$ {precio}</span>
+                    <span className="titulo-detail">Stock: {stock}</span>
+                    <Contador inicial={1} count={count} setCount={setCount} stock={stock}/>
                     <button className="btn-comprar" onClick={() => {handleState(); handleAdd()}}>Agregar al Carrito </button>
                     </>
                 ):(
                     <>
-                        <span className="precio-detail">Total ${ itemToDisplay.precio * count}</span>
-                        {/* <span className="titulo-detail">Stock: {itemToDisplay.stock}</span> */}
+                        <span className="precio-detail">Total ${precio * count}</span>
+                        <span className="titulo-detail">Articulos: {count}</span>
                     <div className="div-btn">
                         <Link to="/cart" onClick={handleState}>
                             <button className="boton1" onClick={() => {handleState()}}>Continuar al carrito</button>

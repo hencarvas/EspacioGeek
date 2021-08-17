@@ -19,12 +19,11 @@ const Form = (cart) => {
             const orders = database.collection('ordenes');
             
             console.log(handleOrder)
-            orders.add(handleOrder).then((response) => alert("agregado"), deleteCart()).catch((error) => {alert('error', error)});
-            // console.log('agregado')
-
             
-        }
+                orders.add(handleOrder).then((resp) => {alert('Agregado correctamente. N. Orden: ' + resp.id)}).catch((error) => {alert('error', error)});
 
+                deleteCart()
+        }
     return(
         <>
         <DetailForm  addCart={addCart} cart={cart}/>

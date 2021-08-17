@@ -15,7 +15,7 @@ const DataProvider = ({children}) => {
             alert("El articulo ya está en el carrito")
         };
     };
-
+console.log(cart)
     const quantityItmes = () => {
         return cart.reduce( (item, items) => item + items.count, 0)
     }

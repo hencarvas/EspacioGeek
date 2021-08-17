@@ -26,15 +26,12 @@ body{
         font-size: 30px;
         padding-left: 5px;
         font-family: 'Montserrat Alternates', sans-serif;    
-        // font-weight: bolder;
     }
 
 .contenedor-cart{
     display: flex;
     flex-direction: row;
-    // justify-content: space-between;
     width: 1230px;
-
 }
 
 .div-carrito{
@@ -45,10 +42,9 @@ body{
 }
 
 .div-cart-items{
-    width: 750px;
     margin-top: 6px;
     background-color: #FFFFFF;
-    
+    padding: 10px;
 }
 
     .btn-vaciar{
@@ -68,18 +64,17 @@ body{
     .div-total{
         display: flex;
         flex-direction: row;
-        justify-content: flex-end;
+        justify-content:space-between;
         align-items: center;
         height: 100px;
-
+        border-top: 1px solid rgba(36, 35, 35, 0.486);
+        width: 710px;
     }
 
     .total-cart{
         margin-right: 10px;
         font-size: 35px;
     }
-
-   
 
         .div-content-cart{
             margin-top: 5px;
@@ -90,4 +85,14 @@ body{
     flex-direction: column;
     align-items: center;
     padding-bottom: 5px;
+}
+
+.div-cliente{
+    width: 450px;
+    height: 350px;
+    box-shadow: 0px 0px 5px rgba(12, 64, 141, 0.932);
+    padding: 20px;
+    margin-left: 740px;
+    position: fixed;
+    
 }

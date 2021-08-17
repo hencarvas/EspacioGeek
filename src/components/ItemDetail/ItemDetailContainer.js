@@ -26,16 +26,16 @@ const DetailContainer = () => {
     },   [id]);
     
     return (
-        <ItemDetail itemToDisplay={itemToDisplay} id={id} />
-
-    //     <> { itemToDisplay.length ?  ( 
-           
-    //         ) : (
-    //             <Loader />    
+        <ItemDetail {...itemToDisplay} id={id} />
+    //     <> { 
+    //     itemToDisplay.length ?  
+    //     ( 
+    //     ) : (
+    //         <Loader/>    
     //     )
     // }
-    // </>
-    )
+    //  </>
+    );
 };
 
 export default DetailContainer;

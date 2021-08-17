@@ -20,7 +20,7 @@ const NavBar = () => {
                         {cat.nombre}
                     </NavLink>
                 ))}
-            </ul>
+            </ul> 
             <div className="div-cart">
                 <NavLink to="/cart"> <i className="fas fa-shopping-cart item-cart"> <span className="cant-items">{quantityItmes()}</span></i></NavLink>
             </div>
