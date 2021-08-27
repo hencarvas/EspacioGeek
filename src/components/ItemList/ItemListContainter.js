@@ -19,7 +19,6 @@ const ItemListContainer = () => {
                     return {...doc.data(), id: doc.id}
                  })
                  ))           
-                 
                 } else {   
                     const articulo = database.collection("articulos")
                     articulo.get().then((result) => setDisplayItems(result.docs.map((docu) => {
@@ -28,7 +27,6 @@ const ItemListContainer = () => {
                     ));         
                 }
             };
-            
 
         getItems(catId);
         // eslint-disable-next-line react-hooks/exhaustive-deps

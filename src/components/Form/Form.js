@@ -1,6 +1,5 @@
 import React, {useContext} from 'react';
 import DetailForm from './DetailForm';
-// import Input from './DetailForm'
 import {database} from './../../firebase/firebase';
 import { CartContext } from '../Context/CartContext';
 import firebase from "firebase/app";
@@ -11,6 +10,7 @@ const Form = ({cart}) => {
 
     const addCart =  (inputs) => {
 
+      // Crear a la orden
             const handleOrder = {
                 buyer: inputs,
                 items: cart,
@@ -52,11 +52,6 @@ const Form = ({cart}) => {
                 }
               });
             };
-
- 
-
-
-
     return(
         <>
         <DetailForm  addCart={addCart} cart={cart}/>
@@ -66,7 +61,3 @@ const Form = ({cart}) => {
 }
 
 export default Form;
-
-// orders.add(handleOrder).then((resp) => {alert('Agregado correctamente. N. Orden: ' + resp.id)}).catch((error) => {alert('error', error)});
-
-//                 deleteCart()

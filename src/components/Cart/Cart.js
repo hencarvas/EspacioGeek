@@ -44,7 +44,6 @@ const CartWidget = () => {
     </div>
     </div>
     )
-
     };  
 
 export default CartWidget;
