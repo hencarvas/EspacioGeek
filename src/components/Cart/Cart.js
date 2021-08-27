@@ -3,7 +3,7 @@ import { CartContext } from '../Context/CartContext';
 import { NavLink } from "react-router-dom";
 import Form from './../Form/Form';
 import CartItem from "./ItemCart";
-
+ 
 const CartWidget = () => {
 
     const {cart, deleteCart, totalCart} = useContext(CartContext);
