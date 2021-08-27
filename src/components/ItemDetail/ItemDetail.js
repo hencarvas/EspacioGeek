@@ -12,24 +12,6 @@ const ItemDetail = ({img, titulo, precio, stock, id}) => {
     const handleState = () => setFinished(!finished); 
 
     const {addToCart, modifyArticle} = useContext(CartContext);
-
-    // const [activo, setActivo] = useState(false);
-
-    // var btnEnviar = document.getElementById('enviar');
-
-    // var num = stock
-    // loquesea()
-    // function loquesea () {
-        // console.log(stock)
-        // var aux = stock;
-        // if (num === 0) {
-        //     btnEnviar.disabled(true);
-        // } else {
-        //     btnEnviar.disabled(false);
-            
-        // }
-    // }   
-    
     
     
     const handleAdd = () => {
