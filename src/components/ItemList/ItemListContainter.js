@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import ItemList from "./ItemList";
 import Loader from "./../Loader/Loader";
-import {database} from "../../Firebase/Firebase";
+import {database} from "../../firebase/firebase";
 
 const ItemListContainer = () => {   
     const [displayItems, setDisplayItems] = useState([]);

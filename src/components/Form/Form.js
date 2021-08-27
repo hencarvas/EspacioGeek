@@ -1,7 +1,7 @@
 import React, {useContext} from 'react';
 import DetailForm from './DetailForm';
 // import Input from './DetailForm'
-import {database} from './../../Firebase/Firebase';
+import {database} from './../../firebase/firebase';
 import { CartContext } from '../Context/CartContext';
 import firebase from "firebase/app";
 

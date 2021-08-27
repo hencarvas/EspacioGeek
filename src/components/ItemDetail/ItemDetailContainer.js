@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import ItemDetail from "./ItemDetail";  
-import {database} from "../../Firebase/Firebase";
+import {database} from "../../firebase/firebase";
 
  
 const DetailContainer = () => {
@@ -16,7 +16,7 @@ const DetailContainer = () => {
         const getItem = async (id) => {
             const doc = await database.collection('articulos').doc(id).get();
             setItemToDisplay({...doc.data()})
-        }
+        } 
 
         if(id === '') {
             setItemToDisplay(itemToDisplay)
