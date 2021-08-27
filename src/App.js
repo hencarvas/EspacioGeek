@@ -13,6 +13,7 @@ const App = () => {
       <BrowserRouter>
         <NavBar />
         <Switch>
+          <>
         <div className="container">
           <Route exact path="/">
             <ItemListContainer />
@@ -27,6 +28,7 @@ const App = () => {
             <DetailContainer />
           </Route>
           </div>
+          </>
         </Switch>
       </BrowserRouter>
     </CartProvider>

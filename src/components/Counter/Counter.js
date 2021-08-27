@@ -2,6 +2,7 @@ import React from 'react';
 
 
 const Contador = ({ inicial, stock, count, setCount}) => {
+
   
   const add = () => {
     if (count === stock) {
@@ -20,9 +21,9 @@ const Contador = ({ inicial, stock, count, setCount}) => {
 
   return (
     <div className="contador">
-      <button className="btn" onClick={min}> - </button>
+      <button className="btn"  onClick={min} disabled = {stock === 0}> - </button>
       <p>{count}</p>
-      <button className="btn" onClick={add}> + </button>
+      <button className="btn" onClick={add} disabled = {stock === 0}> + </button>
     </div>
   );
 };

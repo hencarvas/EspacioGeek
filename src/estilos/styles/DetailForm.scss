@@ -16,10 +16,18 @@
         width: 30vh;
         font-size: 3vh;
         height: 10vh;
-        margin-top: 20px;
+        margin-top: 48px;
         margin-left: 243px;
     }
 
     input{
         margin: 10px
+
+       
+    }
+
+    .error{
+        color: red;
+        margin-bottom: -50px;
+        // display: none;
     }

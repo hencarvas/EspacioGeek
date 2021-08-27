@@ -15,7 +15,7 @@ const DataProvider = ({children}) => {
             alert("El articulo ya está en el carrito")
         };
     };
-console.log(cart)
+
     const quantityItmes = () => {
         return cart.reduce( (item, items) => item + items.count, 0)
     }
@@ -34,14 +34,11 @@ console.log(cart)
         return cart.reduce( (item, items) => item + (items.precio * items.count), 0)
     }
 
-    const totalItem = () => {
-        return cart.reduce((item, items) => item = (items.precio * items.count), 0)
-    }
 
     const deleteCart = () => setCart([]);
 
     return(
-        <CartContext.Provider value={{cart, addToCart, removeToCart, deleteCart, quantityItmes, totalCart, modifyArticle, totalItem}}>
+        <CartContext.Provider value={{cart, addToCart, removeToCart, deleteCart, quantityItmes, totalCart, modifyArticle}}>
                  {children}
     </CartContext.Provider>
     );

@@ -13,12 +13,29 @@ const ItemDetail = ({img, titulo, precio, stock, id}) => {
 
     const {addToCart, modifyArticle} = useContext(CartContext);
 
+    // const [activo, setActivo] = useState(false);
+
+    // var btnEnviar = document.getElementById('enviar');
+
+    // var num = stock
+    // loquesea()
+    // function loquesea () {
+        // console.log(stock)
+        // var aux = stock;
+        // if (num === 0) {
+        //     btnEnviar.disabled(true);
+        // } else {
+        //     btnEnviar.disabled(false);
+            
+        // }
+    // }   
+    
+    
+    
     const handleAdd = () => {
         addToCart({ img, titulo, precio,  count, id});
     }
     
-    // console.log(cart)
-    // console.log(totalIt)   
     return (
         <article className="article-detail">
             <div className="div-img">
@@ -26,12 +43,13 @@ const ItemDetail = ({img, titulo, precio, stock, id}) => {
             </div>
             <div className="div-detail">
                 <h3 className="titulo-detail">{titulo}</h3>
-                {!finished ? (
+                {!finished? (
                     <>
+                    
                     <span className="precio-detail">$ {precio}</span>
                     <span className="titulo-detail">Stock: {stock}</span>
                     <Contador inicial={1} count={count} setCount={setCount} stock={stock}/>
-                    <button className="btn-comprar" onClick={() => {handleState(); handleAdd()}}>Agregar al Carrito </button>
+                    <button id="enviar" className="btn-comprar" disabled = {stock === 0} onClick={() => {    handleState(); handleAdd()}}>Agregar al Carrito </button>
                     </>
                 ):(
                     <>
@@ -39,10 +57,11 @@ const ItemDetail = ({img, titulo, precio, stock, id}) => {
                         <span className="titulo-detail">Articulos: {count}</span>
                     <div className="div-btn">
                         <Link to="/cart" onClick={handleState}>
-                            <button className="boton1" onClick={() => {handleState()}}>Continuar al carrito</button>
+                            <button className="boton1"  onClick={() => {handleState()}}>Continuar al carrito</button>
                         </Link>
                             <button className="boton2" onClick={() => {handleState(); modifyArticle(id)}}>Modificar</button>
                     </div>
+                  
                     </>
                 )}
             </div>

@@ -18,7 +18,8 @@ const ItemListContainer = () => {
                     categoria.get().then((query) => setDisplayItems(query.docs.map((doc) => {
                     return {...doc.data(), id: doc.id}
                  })
-                 ))
+                 ))           
+                 
                 } else {   
                     const articulo = database.collection("articulos")
                     articulo.get().then((result) => setDisplayItems(result.docs.map((docu) => {
@@ -28,6 +29,7 @@ const ItemListContainer = () => {
                 }
             };
             
+
         getItems(catId);
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [catId]);
@@ -37,7 +39,7 @@ const ItemListContainer = () => {
         {
         displayItems.length ? (
         <div className="contenedor">
-            <ItemList displayItems={displayItems} />
+            <ItemList displayItems={displayItems}/>
         </div>
             ) : (
                 <Loader/> 

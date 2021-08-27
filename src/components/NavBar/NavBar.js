@@ -3,16 +3,14 @@ import {NavLink} from "react-router-dom";
 import {Categorias} from "./../../datos/categorias.json";
 import { CartContext } from '../Context/CartContext';
 
-// import {ItemCart} from "../Cart/Cart"
-
 const NavBar = () => {
     
     const {quantityItmes} = useContext(CartContext);
     
     return (
-        <nav>
+        <nav className="navbar" title="Inicio">
             <NavLink to="/" className="titulo-prin" >EspacioGeek</NavLink>
-
+            <div className="div-nav">
             <ul>
                 {Categorias.map((cat) => (
                     <NavLink to={`/categoria/${cat.id}`}
@@ -21,12 +19,17 @@ const NavBar = () => {
                     </NavLink>
                 ))}
             </ul> 
-            <div className="div-cart">
-                <NavLink to="/cart"> <i className="fas fa-shopping-cart item-cart"> <span className="cant-items">{quantityItmes()}</span></i></NavLink>
+            <NavLink to="/cart"> 
+                <div className="div-cart" title="Carrito">    
+                <i className="fas fa-shopping-cart item-cart"> 
+                <div className="cant-items">{quantityItmes()}</div>
+                </i>
+                </div>
+            </NavLink>
             </div>
         </nav>
     );
-};
+}; 
 
 export default NavBar;
 
